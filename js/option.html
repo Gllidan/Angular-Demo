@@ -1,0 +1,40 @@
+<html ng-app="myApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://apps.bdimg.com/libs/angular.js/1.2.16/angular.min.js"></script>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div ng-controller="EngineeringController" class="container">
+    <div class="col-md-4">
+        <label for="name">Choose a new activity:</label>
+        <!--act 代表在option框中的值 for act in 对象 代表遍历对象,并把对象中的每一个值赋值给act-->
+        <!--ng-option 定义option的显示格式-->
+        <select ng-model="age" class="form-control"
+                ng-options="act +'('+ '---' + ')' for act in array">
+        </select>
+    </div>
+    <div>{{age}}</div>
+</div>
+<script type="text/javascript">
+	var myAppModule = angular.module("myApp",[]);
+	myAppModule.controller("EngineeringController",["$scope",function($scope){
+		$scope.temp = {
+            //设置默认选项 ,如果是数组可以直接对象[索引]的方式来设置
+			type: "Writing code"
+		};
+		$scope.age = "Testing code";
+
+		$scope.array =
+			[
+				"Writing code",
+				"Testing code",
+				"Fixing bugs",
+				"Dancing"
+			];
+	}]);
+</script>
+</body>
+</html>

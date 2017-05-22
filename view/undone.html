@@ -1,0 +1,10 @@
+<div class="list_body active" >
+    <ul>
+        <li ng-repeat="(key,value) in temp">
+            <input type="checkbox" ng-checked="false" ng-click="check(key)">
+            <span class="item_content" > 标题 : {{value.content}}</span>
+            <span class="del" ng-click="delete(key)">删除</span>
+            <span class="detail" ng-click="detail(key)">详情</span>
+        </li>
+    </ul>
+</div>

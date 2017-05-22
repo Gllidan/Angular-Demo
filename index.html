@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/buy.css">
+    <script src='js/angular1.6.js'></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/directive.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/bookCtrl.js"></script>
+    <script src="js/buyCtrl.js"></script>
+
+</head>
+
+<body ng-app='app' ng-controller='appCtrl'>
+
+    <div class="back_top">
+        <img class="logoImg" src="images/Top.jpg" alt="">
+    </div>
+    <!--------------------------头部logo--------------------------->
+    <div class="banner">
+        <img src="images/logo.png" alt="logo1" ng-if="cut">
+        <img src="images/logo2.png" alt="logo2" ng-if="!cut">
+        <div class="cutBox">
+            <!--点击传布尔值,从而切换显示标签元素-->
+            <button class="cutBtn" ng-show="cut" ng-click="cutFn(false)"></button>
+            <button class="cutBack" ng-show="!cut" ng-click="cutFn(true)"></button>
+        </div>
+    </div>
+    <!---------------------------添加内容导航--------------------------->
+    <div class="nav">
+        <div class="nav_content" ng-show="cut">
+            <div class="nav_right">
+                <!--监听表单提交-->
+                <form action="#">
+                    <input type="text" placeholder="请输入内容..." ng-model='text'>
+                    <button class="subBtn" type="button" ng-click="getText()">提交</button>
+                </form>
+            </div>
+        </div>
+        <!--nav切换-->
+        <div class="nav_content search_content" ng-show="!cut">
+            <div class="nav_right">
+                <!--监听表单提交-->
+                <form action="#">
+                    <input type="text" placeholder="请输入内容..." ng-model="search">
+                    <input type="submit" value="搜索" ng-click="searchFn()" ui-sref="what">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!---------------------------内部列表--------------------------->
+    <div class="content_list"  >
+        <!--头部标签-->
+        <div class="header navBcg" ng-show="cutToo">
+            <ul>
+                <a ng-class="{cur:type==1}" ng-click="change(1)" ui-sref="undone">待办事项</a>
+                <a ng-class="{cur:type==2}" ng-click="change(2)" ui-sref="done">已完成事项</a>
+            </ul>
+        </div>
+        <!--标签栏切换-->
+        <div class="header navBcg navCut" ng-show="!cutToo">
+            <ul>
+                <!--点击传参,告诉控制器当前点击的是哪一个页面,并且跳转指定视图-->
+                <a ng-class="{cur:type==1}" ng-click="change(1)" ui-sref="book">书籍推荐</a>
+                <a ng-class="{cur:type==2}" ng-click="change(2)" ui-sref="movie" >电影推荐</a>
+                <a ng-class="{cur:type==3}" ng-click="change(3)" ui-sref="music">音乐推荐</a>
+            </ul>
+        </div>
+
+        <!--添加视图占位符-->
+        <!--减少数据请求,设置多个视图-->
+        <div ui-view="undone"></div>
+        <div ui-view="done"></div>
+        <div ui-view="book"></div>
+        <div ui-view="movie"></div>
+        <div ui-view="music"></div>
+        <div ui-view="buy"></div>
+        <button class="hisBtn" ng-show="!cutToo" ng-click="return()">返回</button>
+    </div>
+    <!---------------------------详情盒子--------------------------->
+    <div class="detailBox"  ng-show='flag' ng-click="close()">
+        <div class="smallBox" ng-click="clickBox($event)">
+            <span class="title">Title</span>
+            <input type="text" class="dataBox" ng-model="innerTitle">
+            <span class="texttitle">标题 :</span>
+            <span class="dateBox">日期 :<span> {{ date }}</span></span>
+            <textarea class="textBox" ng-model='innerText'></textarea>
+            <button class="btn" ng-click="submit(flag)">提交</button>
+        </div>
+    </div>
+    <div class="weather" ng-controller="weatherCtrl">
+
+        <div class="innerBox">
+            <ul>
+               <!--
+               实现select效果
+               1.设置每个li的显示判断为或判断,只要满足一个就显示
+               2.如果hover到li上就设置全部显示
+               3.离开就全部隐藏
+               4.点击的话,全部隐藏,并满足对应的li元素的另一个显示条件
+               -->
+                <li ng-show="liShow == 0||type"
+                    ng-click="liClick(false,0)"
+                    ng-mouseover="liHover(true)"
+                    ng-mouseleave="leave(false)"
+                >
+                    <a href="">广州</a>
+                </li>
+                <li ng-show="liShow == 3||type"
+                    ng-click="liClick(false,3)"
+                    ng-mouseover="liHover(true)"
+                    ng-mouseleave="leave(false)"
+                >
+                    <a href="">深圳</a>
+                </li>
+                <li ng-show="liShow == 1||type"
+                    ng-click="liClick(false,1)"
+                    ng-mouseover="liHover(true)"
+                    ng-mouseleave="leave(false)"
+                >
+                    <a href="">北京</a>
+                </li>
+                <li ng-show="liShow == 2||type"
+                    ng-click="liClick(false,2)"
+                    ng-mouseover="liHover(true)"
+                    ng-mouseleave="leave(false)"
+                >
+                    <a href="">上海</a>
+                </li>
+            </ul>
+
+            <h2>{{weather[current].qw}} 度</h2>
+            <h3>{{weather[current].tq}}</h3>
+            <h4>{{weather[current].fl}}</h4>
+
+        </div>
+    </div>
+    <!---------------------------登录验证---------------------------->
+    <login></login>
+    <!--<register></register>-->
+</body>
+
+</html>

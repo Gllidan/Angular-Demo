@@ -1,0 +1,194 @@
+<div class="bookDetailBox">
+    <div class="leftBox">
+        <!--书的基本信息-->
+        <div class="bookMessage">
+            <img ng-src="{{bookDetail.images.medium}}" alt="" class="bookimg">
+            <div class="text">
+                <p class="title">{{bookDetail.title}}</p>
+                <p>作者 :{{bookDetail.author[0]}}</p>
+                <p>出版社 :{{bookDetail.publisher}}</p>
+                <p>出版时间 :{{bookDetail.pubdate}}</p>
+                <p>页数 :{{bookDetail.pages}}</p>
+                <p>定价 :{{bookDetail.price}}</p>
+            </div>
+        <!--评分-->
+            <div class="grade">
+                <div class="innerBox">
+                    <p>历史评分</p>
+                    <p>
+                        <span class="ratio">{{bookDetail.rating.average}}</span>
+                        <div class="start" ng-style="backSty"></div>
+                    </p>
+                    <div class="numlist">
+                        <ul>
+                            <li>5星 <span></span></li>
+                            <li>4星 <span></span></li>
+                            <li>3星 <span></span></li>
+                            <li>2星 <span></span></li>
+                            <li>1星 <span></span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="sign">
+                <ul>
+                    <li>
+                        <a ng-click="write(true)">写随记</a>
+                    </li>
+                    <li>
+                        <a ui-sref="buy" ng-click="buyClick()">加入购书单</a>
+                    </li>
+                    <li class="down" id="down" ng-mouseover="display = true" ng-mouseleave="display = false">
+                        <a>分享到</a>
+                    </li>
+                </ul>
+                <!--利用鼠标事件切换标签显示隐藏-->
+                <ul class="share" ng-show="display" ng-mouseover="display = true" ng-mouseleave="display = false">
+                    <!--点击分享功能-->
+                    <li ng-click="share('wei')"><a href="#"><img src="images/微博.png" > 微博</a></li>
+                    <li ng-click="share('dou')"><a href="#"><img src="images/豆瓣.png" > 豆瓣</a></li>
+                    <li ng-click="share('qq')"><a href="#"><img src="images/qq.png" > QQ</a></li>
+                </ul>
+            </div>
+            <img src="" alt="">
+        </div>
+        <!--内容简介-->
+        <div class="content">
+            <div class="innerBox">
+                <div class="title">内容简介  · · · · · ·</div>
+                <div class="box">
+                    {{bookDetail.summary}}
+                </div>
+            </div>
+
+        </div>
+        <!--书的标签-->
+        <div class="tags">
+            <div class="tagInner">
+                <div class="title">标签 · · · · · ·</div>
+                <span ng-repeat="tag in bookDetail.tags">{{tag.title}}</span>
+            </div>
+
+        </div>
+        <!--推荐书籍-->
+        <div class="choose">
+            <div class="title">喜欢''的人也喜欢 · · · · · ·</div>
+            <div ng-repeat="(key,ran) in ranBook" class="rbook" ng-click="chooseClick(key)">
+                <a>
+                    <img ng-src="{{ran.image}}" alt="">
+                    <p>{{ran.title}}</p>
+                </a>
+
+            </div>
+        </div>
+        <!--短评-->
+        <div class="say">
+            <div class="title">
+                评论 · · · · · ·  ( 全部 11 条 )
+                <span>我来说两句</span>
+            </div>
+            <div class="uesrCon">
+                <daiv class="user">
+                    user :熊沾沾
+                    <span class="data">2017-05-14</span>
+                    <span>0 有用</span>
+                </daiv>
+                <div class="text">特立独行的猫的文字有一种温柔的力量，总能击中你的现实，说中你的内心。</div>
+            </div>
+            <div class="uesrCon">
+                <daiv class="user">
+                    user :熊沾沾
+                    <span class="data">2017-05-14</span>
+                    <span>0 有用</span>
+                </daiv>
+                <div class="text">特立独行的猫的文字有一种温柔的力量，总能击中你的现实，说中你的内心。</div>
+            </div>
+            <div class="more">
+                <a>
+                    >> 更多短评 11 条
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--书评-->
+    <div class="rightBox">
+        <!--书评-->
+        <div class="comment">
+            <div class="title">
+                <span>你自以为的极限，只是别人的起点的书评</span>
+            </div>
+            <div class="comBox">
+                <div class="user">
+                    <img class="userImg"></img>
+                    <span>王大宝</span>
+                    <span>2017-05-12 19:46:48</span>
+                </div>
+                <p class="tag">阶层固化，淘汰的就是那些玩手机的人</p>
+                <p class="content">最近有个游戏叫“王者荣耀”被很多网友戏称“亡者农药”。 办公室就有一个同事爱上了这个游戏。他跟我差不多时间进入这家公司，到现在因为很多原因被调职到很多部门，兜兜转转回到策划部。当时都是小文案，而现在我已经是他的经理了。他每天上班除了玩游戏就是睡觉，因为公司某
+                    <span> ... (31回应)</span>
+                </p>
+                <span class="agree">33有用 / 0没用</span>
+            </div>
+            <div class="comBox">
+                <div class="user">
+                    <img class="userImg">
+                    <span>王大宝</span>
+                    <span>2017-05-12 19:46:48</span>
+                </div>
+                <p class="tag">阶层固化，淘汰的就是那些玩手机的人</p>
+                <p class="content">最近有个游戏叫“王者荣耀”被很多网友戏称“亡者农药”。 办公室就有一个同事爱上了这个游戏。他跟我差不多时间进入这家公司，到现在因为很多原因被调职到很多部门，兜兜转转回到策划部。当时都是小文案，而现在我已经是他的经理了。他每天上班除了玩游戏就是睡觉，因为公司某
+                    <span> ... (31回应)</span>
+                </p>
+                <span class="agree">33有用 / 0没用</span>
+            </div>
+            <div class="comBox">
+                <div class="user">
+                    <img class="userImg">
+                    <span>王大宝</span>
+                    <span>2017-05-12 19:46:48</span>
+                </div>
+                <p class="tag">阶层固化，淘汰的就是那些玩手机的人</p>
+                <p class="content">最近有个游戏叫“王者荣耀”被很多网友戏称“亡者农药”。 办公室就有一个同事爱上了这个游戏。他跟我差不多时间进入这家公司，到现在因为很多原因被调职到很多部门，兜兜转转回到策划部。当时都是小文案，而现在我已经是他的经理了。他每天上班除了玩游戏就是睡觉，因为公司某
+                    <span> ... (31回应)</span>
+                </p>
+                <span class="agree">33有用 / 0没用</span>
+            </div>
+            <div class="comBox">
+                <div class="user">
+                    <img src="" alt="">
+                    <span>王大宝</span>
+                    <span>2017-05-12 19:46:48</span>
+                </div>
+                <p class="tag">阶层固化，淘汰的就是那些玩手机的人</p>
+                <p class="content">最近有个游戏叫“王者荣耀”被很多网友戏称“亡者农药”。 办公室就有一个同事爱上了这个游戏。他跟我差不多时间进入这家公司，到现在因为很多原因被调职到很多部门，兜兜转转回到策划部。当时都是小文案，而现在我已经是他的经理了。他每天上班除了玩游戏就是睡觉，因为公司某
+                    <span> ... (31回应)</span>
+                </p>
+                <span class="agree">33有用 / 0没用</span>
+            </div>
+            <div class="comBox">
+                <div class="user">
+                    <img class="userImg"></img>
+                    <span>王大宝</span>
+                    <span>2017-05-12 19:46:48</span>
+                </div>
+                <p class="tag">阶层固化，淘汰的就是那些玩手机的人</p>
+                <p class="content">最近有个游戏叫“王者荣耀”被很多网友戏称“亡者农药”。 办公室就有一个同事爱上了这个游戏。他跟我差不多时间进入这家公司，到现在因为很多原因被调职到很多部门，兜兜转转回到策划部。当时都是小文案，而现在我已经是他的经理了。他每天上班除了玩游戏就是睡觉，因为公司某
+                    <span> ... (31回应)</span>
+                </p>
+                <span class="agree">33有用 / 0没用</span>
+            </div>
+            <div class="more">
+                <a><p> >> 我要写书评 </p></a>
+                 <a class="moreBox"><p> >> 更多书评 </p></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="writeBox" ng-show="cut">
+    <div class="title" ng-model="text">《{{ bookDetail.title }}》-- 的随记</div>
+    <textarea class="text" ng-model="writeSth"></textarea>
+    <span>日期 : {{ date }}</span>
+    <button ng-click="refer(false,writeSth)">提交</button>
+</div>
+

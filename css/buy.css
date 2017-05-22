@@ -1,0 +1,115 @@
+.panel-heading {
+    width:100%;
+    background: #3f585f;
+    position:relative;
+}
+.panel-heading .formHeader{
+    width:100%;
+    height:60px;
+    line-height: 60px;
+    font-size: 25px;
+    text-align: center;
+    border-bottom:4px solid #3e312b;
+    color: whitesmoke;
+}
+.panel-heading .table{
+    width:100%;
+}
+.panel-heading .table td{
+    width:16.6%;
+}
+.panel-heading .table .title{
+    width:100%;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 4px solid #000;
+}
+.panel-heading .table .title td{
+    background: #a6c8cf;
+}
+.panel-heading .table .row{
+    width:100%;
+    height:50px;
+    text-align: center;
+    background: #fffcee;
+    border-bottom: 4px solid #000;
+}
+.panel-heading .table .row span{
+    width:40px;
+    height:20px;
+    line-height: 20px;
+    border:1px solid #7f655b;
+    display:inline-block;
+}
+.panel-heading .table .row button{
+    width:25px;
+    height:25px;
+    line-height: 25px;
+    border-radius: 5px;
+    color:white;
+    background: #7985b2;
+
+}
+.panel-heading .table .row .cutBtn{
+    width:60px;
+    height:30px;
+    line-height: 30px;
+    color:white;
+    background: #7985b2;
+    border-radius:5px;
+}
+.payTilte{
+    width:100%;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 4px solid #000;
+    background: #a6c8cf;
+}
+.payBtn{
+    width:60px;
+    height:30px;
+    line-height: 30px;
+    border-radius: 5px;
+    background: #cc0000;
+    color: white;
+}
+.askBox{
+    width:400px;
+    height:200px;
+    background: #5d848d;
+    border-radius: 10px;
+    border:4px solid #3e312b;
+    position:absolute;
+    top:50px;
+    left:50%;
+    margin-left: -200px;
+    text-align: center;
+}
+.askBox p{
+    display:inline-block;
+    width:200px;
+    line-height:30px;
+    font-size: 20px;
+    color:white;
+    margin-top:40px;
+}
+.askBox button{
+    width:80px;
+    height:40px;
+    border:3px solid #3e312b;
+    background: #a6c8cf;
+    border-radius: 5px;
+    color: #5a453d;
+    font-size: 15px;
+    bottom:30px;
+    position:absolute;
+    font-weight: bolder;
+}
+.askBox button:nth-of-type(1){
+    left:45px;
+}
+.askBox button:nth-of-type(2){
+    right:45px;
+}

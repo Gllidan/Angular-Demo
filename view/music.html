@@ -1,0 +1,19 @@
+<div class="allBox">
+        <div class="musicBox" ng-repeat="music in musicData.musics">
+            <a href="">
+                <div class="innerBox" >
+                <div class="imgBox">
+                    <img ng-src="{{music.image}}" alt="">
+                </div>
+                <div class="muctag">
+                    <span ng-repeat="(key,tag) in music.tags" ng-show="key>3 && key<7">{{tag.name}}</span>
+                </div>
+                <p class="muctitle">{{music.title}}</span>
+                <p class="mucaverage">评分 :{{music.rating.average}}</p>
+                <p class="mucsinger">歌手 :{{music.attrs.singer[0]}}</p>
+                <p class="mucpublisher">出版者 :{{music.attrs.publisher[0]}}</p>
+                <p class="mucpubdate">发行时间 :{{music.attrs.pubdate[0]}}</p>
+            </div>
+            </a>
+        </div>
+</div>

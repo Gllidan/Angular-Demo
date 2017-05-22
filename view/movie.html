@@ -1,0 +1,37 @@
+<div class="movieBox" ng-repeat="(key,movie) in movieData.subjects">
+    <div class="innerBox">
+        <a>
+            <dl>
+                <dt class="movieImg">
+                    <img ng-src="{{movie.images.medium}}" alt="">
+                </dt>
+                <dd class="sort">
+                    <h3>{{movie.title}}</h3>
+                    <span class="average">{{movie.rating.average}}</span>
+                    <p>时常 :
+                        <span>{{movie.durations[0]}}</span>
+                    </p>
+                    <p>
+                        分类 :
+                        <span ng-repeat="tab in movie.genres">{{tab}}</span>
+                    </p>
+                    <p>
+                        导演 :
+                        <span ng-repeat="director in movie.directors">{{director.name}}</span>
+                    </p>
+                    <p>
+                        主演 :
+                        <span ng-repeat="cast in movie.casts">{{cast.name}}</span>
+                    </p>
+                </dd>
+                <span class="timeBox">上映时间 :{{movie.mainland_pubdate}}</span>
+            </dl>
+        </a>
+    </div>
+    <!--<div class="page">-->
+        <!--<a>上一页</a>-->
+        <!--<span></span>-->
+        <!--<a>下一页</a>-->
+    <!--</div>-->
+</div>
+

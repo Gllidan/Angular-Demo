@@ -1,0 +1,44 @@
+<div class="panel-heading" >
+    <div class="formHeader">
+        <h3>购书单</h3>
+    </div>
+    <!-- Table -->
+    <table class="table">
+        <tr class="title">
+            <td>产品编号</td>
+            <td>产品名字</td>
+            <td>产品数量</td>
+            <td>产品单价</td>
+            <td>产品总价</td>
+            <td>操作</td>
+        </tr>
+        <tr class="row" ng-repeat="(key,item) in data">
+            <td>{{item.id}}</td>
+            <td>{{item.title}}</td>
+            <td class="col-md-3">
+                <button class="minBtn" ng-click ='minus(key)'>-</button>
+                <span>{{item.amount}}</span>
+                <button class="addBtn" ng-click ='add(key)'>+</button>
+            </td>
+            <td>{{item.price}}</td>
+            <td>{{item.price * item.amount}}</td>
+            <td>
+                <button type="button" class="cutBtn" ng-click="clear(key,'true')">清除</button>
+            </td>
+        </tr>
+        <tr class="payTilte">
+            <td class="count" colspan="1">商品购买数量 : {{gross()}}</td>
+            <td></td>
+            <td class="pay" colspan="1">需要支付 :{{totalPay()}}</td>
+            <td></td>
+            <td></td>
+            <td colspan="1"><button class="payBtn" >结算</button></td>
+        </tr>
+    </table>
+    <div class="askBox" ng-show="show">
+        <p>确认取消该产品 ?</p>
+        <button ng-click="affirm()">确认</button>
+        <button ng-click="abolish()">取消</button>
+    </div>
+
+</div>

@@ -1,0 +1,1017 @@
+html,body{
+    height: 100%;
+}
+body{
+    font-size:12px;
+    font-family:微软雅黑;
+    font-weight: bolder;
+    background: #bf9188;
+    user-select: none;
+}
+.hisBtn{
+    width: 60px;
+    height:30px;
+    line-height: 30px;
+    border-radius:5px;
+    background: #80999f;
+    color:white;
+    font-size:14px;
+    border:2px solid #3e312b;
+    position:absolute;
+    top:10px;
+    right:20px;
+}
+.back_top{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    display: none;
+}
+
+
+.banner{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+.banner img{
+    width:600px;
+    margin-top:10px;
+    border-radius: 10px;
+}
+.nav{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 100px;
+
+}
+.nav .nav_content{
+    width: 900px;
+    height: 100px;
+    line-height: 100px;
+    margin: 0 auto;
+
+}
+.nav_content{
+    text-align: center;
+}
+.nav_content .nav_right input[type=text]{
+
+    width: 480px;
+    height: 44px;
+    border: 4px solid #ff4685;
+    border-right:none;
+    display: inline-block;
+    border-radius: 10px 0 0 10px;
+}
+.nav_content .nav_right input[type=submit]{
+    width: 100px;
+    height: 44px;
+    background: #ff4685;
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 18px;
+    position: relative;
+    left: -5px;
+    top:0;
+    border-radius: 0 10px 10px 0px;
+}
+.subBtn{
+    width: 100px;
+    height: 43px;
+    background: #ff4685;
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 18px;
+    position: relative;
+    left: -5px;
+    top:4px;
+    border-radius: 0 10px 10px 0px;
+}
+.content_list{
+    width: 900px;
+    margin:100px auto;
+    border: 4px solid #3e312b;
+    border-radius: 10px;
+    position:relative;
+}
+.content_list .header {
+    border-bottom: 4px solid #3e312b;
+    overflow: hidden;
+
+}
+.navBcg{
+    background:url("../images/logo.png")no-repeat 0px -200px;
+    background-size:900px;
+}
+.content_list .header a{
+    display: inline-block;
+    padding: 15px 20px;
+    color: #ff4685;
+    float: left;
+}
+.content_list .header .cur{
+    background: #3e312b;
+    color: #ffffff;
+}
+.list_body{
+    display: none;
+    background: #fbffde;
+    border-radius: 0 0 5px 5px;
+}
+.active{
+    display: block;
+}
+.list_body li{
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 4px solid #3e312b;
+    padding-left: 10px;
+
+}
+
+.list_body li:last-child{
+    border-bottom:none;
+}
+.list_done li{
+    height: 44px;
+    line-height: 44px;
+    background: #3e312b;
+
+    border-bottom: 4px solid #ffeceb;
+    padding-left: 10px;
+    color: #ffffff;
+    border-radius: 0px 0px 10px 10px;
+}
+.list_body .item{
+    border-radius: 0 10px 10px 0;
+}
+.del,.detail{
+    float: right;
+    margin-right: 20px;
+    color: #3e312b;
+}
+.delT,.detailT{
+    float: right;
+    margin-right: 20px;
+    color: #faffd8;
+}
+
+input{
+    padding-left: 10px;
+}
+/*设置弹出盒子*/
+.detailBox{
+    width:100%;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+    position:absolute;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.texttitle,dateBox{
+    width:40px;
+    height:30px;
+    display:inline-block;
+    font-size:14px;
+    position:absolute;
+    top:60px;
+    left:60px;
+
+}
+.dateBox{
+    position:absolute;
+    top:60px;
+    right:200px;
+    font-size: 14px;
+}
+.dateBox span{
+    font-size:12px;
+}
+.smallBox{
+    width:600px;
+    height:300px;
+    border-radius: 15px;
+    border:4px solid #3e312b;
+    background: #fbffde;
+}
+.smallBox .title{
+    width:100%;
+    height:50px;
+    padding-top:20px;
+    display:flex;
+    font-size:20px;
+    justify-content:center;
+}
+.smallBox .dataBox,.smallBox .dataBox{
+    font-weight: bolder;
+    width:100px;
+    border-bottom:5px solid #ff938d;
+    background:none;
+    display:block;
+    margin:15px 105px;
+}
+.smallBox{
+    position:relative;
+}
+.textBox{
+    width: 80%;
+    height: 50%;
+    background: #ffeceb;
+    border:5px solid #ff938d;
+    font-size:12px;
+    line-height:20px;
+    padding:0 20px;
+    position:absolute;
+    top:90px;
+    left:50%;
+    margin-left: -40%;
+}
+.btn{
+    width:80px;
+    height:30px;
+    border-radius: 10px;
+    background: #ff938d;
+    position:absolute;
+    bottom:15px;
+    right: 65px;
+    color:white;
+}
+
+/*天气盒子*/
+.weather{
+    width:200px;
+    height: 200px;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.weather .innerBox {
+    margin:20px;
+    position:relative;
+    width:200px;
+    height:200px;
+
+}
+.weather .innerBox li{
+    width:80px;
+    font-size: 40px;
+    font-weight: bolder;
+}
+.weather .innerBox li a{
+    color: #fffcee;
+}
+.weather .innerBox li a:hover{
+    font-size: 40px;
+    color: #685049;
+}
+.weather .innerBox h1{
+    font-size: 40px;
+    font-weight: bolder;
+    color: #fffcee;
+}
+.weather .innerBox h2,.weather .innerBox h3,.weather .innerBox h4{
+    font-size: 20px;
+    font-weight: bolder;
+    color: #fffcee;
+}
+.weather .innerBox h2{
+    position: absolute;
+    right:55px;
+    top:5px;
+}
+.weather .innerBox h3,.weather .innerBox h4{
+    right:75px;
+    font-size:15px;
+    top:32px;
+    position:absolute;
+
+}
+.weather .innerBox h4{
+    right:30px;
+}
+/*搜索切换*/
+.cutBox{
+    width:40px;
+    height: 40px;
+    position:absolute;
+    left:50%;
+    top:55px;
+    margin-left: -10px;
+    padding:0;
+}
+.cutBtn {
+    width:40px;
+    height: 40px;
+    background:url("../images/star 1.png") no-repeat;
+    background-size:40px;
+}
+.cutBack{
+    width:40px;
+    height: 40px;
+    background:url("../images/star 2.png") no-repeat;
+    background-size:40px;
+}
+.search_content .nav_right input[type=text]{
+    border: 4px solid #fb9640;
+}
+.search_content .nav_right input[type=submit]{
+    background: #fb9640;
+}
+.navCut{
+    background:url("../images/logo2.png")no-repeat 0px -170px;
+    background-size:900px;
+}
+.content_list .navCut a{
+    color:  #fb9640;
+}
+.content_list .arrange{
+    width:220px;
+    line-height: 30px;
+    position: absolute;
+    top:0;
+    right:0;
+
+}
+.content_list .arrange li{
+    float:left;
+    width:50px;
+    height:30px;
+    color: #fffcee;
+    border: 1px solid #3e312b;
+    border-radius: 5px;
+    text-align: center;
+    background: #526769;
+    margin: 10px;
+}
+/***************************************************************/
+.bookBbox{
+    width:100%;
+    background: #fbffef;
+    color: #838383;
+}
+.bookBbox a{
+    text-decoration: none;
+}
+.bookBbox a:hover{
+    color:#838383;
+
+}
+.bookBox{
+    width: 30%;
+    margin-left:2.4%;
+    margin-top:2.4%;
+    margin-bottom: 2.4%;
+    box-shadow: 1px 2px 10px 1px #ccc;
+    display: inline-block;
+    background:whitesmoke;
+}
+.bookBox .imgBox{
+    display:inline-block;
+    float:left;
+    margin-right:10px;
+}
+
+.bookBox .imgBox img{
+    width:110px;
+    height: 150px;
+    background: #fbffde;
+}
+.bookBox .messageBox{
+    display:inline-block;
+    float:left;
+    height:150px;
+    width: 50%;
+    padding:5px;
+}
+.bookBox .title{
+    font-size:14px;
+    width:80px;
+    height:20px;
+    box-sizing:border-box;
+}
+.bookBox .title span{
+    width:120px;
+    height:20px;
+    display: inline-block;
+    /*超出部分用省略号代替*/
+    text-overflow : ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+.bookBox .messageBox .score{
+    display:block;
+    text-align: center;
+    width:30px;
+    height: 20px;
+    border-radius: 2px;
+    margin-top: 6px;
+    background:lightgoldenrodyellow;
+    color: #fb9640;
+    margin-left:-3px;
+}
+.bookBox .messageBox .author{
+    display: block;
+    margin-top: 6px;
+    width:120px;
+    height:20px;
+    overflow: hidden;
+}
+.bookBox .messageBox .press{
+    display: block;
+    margin-top: 6px;
+    width:120px;
+    height:20px;
+    overflow: hidden;
+}
+.bookBox .messageBox .sort{
+    width: 100%;
+    height: 40%;
+    margin-left:-4px
+}
+.bookBox .messageBox .sort span{
+    width:30px;
+    height:20px;
+    display: inline-block;
+    margin-left:5px;
+    background: #fb9640;
+    padding:0 3px;
+    text-align: center;
+    border-radius:5px;
+    margin-top: 10px;
+    font-size:10px;
+    line-height:20px;
+    color: #fffef5;
+    float:left;
+    overflow: hidden;
+}
+/**************************电影分页样式设计********************************/
+.movieBox{
+    width:100%;
+    background: #f5f9ea;
+    padding:2%;
+    padding-bottom: 0;
+    font-size:14px;
+}
+
+.movieBox .innerBox{
+    width:100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px -10px 50px 0px #faf0c8 inset;
+    background: #feffef;
+    padding:10px;
+    position:relative;
+    border-bottom: 1px solid orange;
+}
+
+.movieBox .movieImg{
+    display:inline-block;
+    float:left;
+    border:1px solid #ccc;
+}
+.movieBox .movieImg img{
+    width:110px;
+}
+.movieBox .sort{
+    display:inline-block;
+    width:80%;
+    height:140px;
+    margin-left: 20px;
+    line-height:30px;
+    font-size:12px;
+}
+.movieBox .sort h3{
+    font-size:14px;
+    font-weight:bolder;
+    display:inline-block;
+}
+.sort span{
+    margin-left:10px;
+}
+.sort .average{
+    width:30px;
+    line-height: 20px;
+    display:inline-block;
+    background: #fb9640;
+    border-radius: 5px;
+    text-align: center;
+    color:white;
+}
+.movieBox:last-child{
+    padding-bottom: 2%;
+}
+.movieBox .innerBox .timeBox{
+    position:absolute;
+    right:0;
+    bottom:0;
+    background: #fb9640;
+    width:160px;
+    height:30px;
+    display:block;
+    text-align: center;
+    line-height:30px;
+    border-radius: 10px 0 0 0;
+    color: #fafad2;
+    box-shadow: 0px -4px 6px 0px #faf0c8 inset;
+    z-index: 2;
+}
+/*音乐页面*/
+.allBox{
+    width:100%;
+    text-align: center;
+    background: #f7fbec;
+}
+.musicBox{
+    width:180px;
+    height:360px;
+    display:inline-block;
+    padding:10px;
+    position:relative;
+    background: #e2e2e4;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 1px 1px #acacae;
+}
+.musicBox .innerBox{
+    width:100%;
+    height:100%;
+}
+.musicBox .innerBox .imgBox{
+    width: 100%;
+    text-align: center;
+}
+.musicBox img{
+    width: 150px;
+    height: 150px;
+}
+.mucaverage,.mucsinger,.mucpublisher,.mucpubdate,.muctitle{
+    width:100%;
+    line-height:30px;
+    text-overflow : ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: start;
+}
+.muctag{
+    margin: 5px;
+    height:20px;
+
+}
+.muctag span{
+    width:40px;
+    height:20px;
+    line-height:20px;
+    margin-left: 5px;
+    border-radius: 5px;
+    display:inline-block;
+    background: palevioletred;
+    color: whitesmoke;
+    text-align: center;
+    overflow: hidden;
+    padding:0 5px;
+}
+.singer{
+    width:100%;
+}
+a:hover {
+    font-size: 12px;
+    color: inherit;
+
+}
+/**********************书本详情*********************************/
+.bookDetailBox{
+    width:100%;
+    height:1150px;
+    border-radius: 5px;
+}
+.bookDetailBox .leftBox {
+    width:65%;
+    height: 100%;
+    background: #efede5;
+    float: left;
+}
+/*/基本信息栏/*/
+.bookDetailBox .leftBox .bookMessage{
+    width:100%;
+    height:250px;
+}
+/*描述栏*/
+.bookDetailBox .leftBox .bookMessage .text{
+    width: 30%;
+    height: 80%;
+    padding-top:20px;
+    display:inline-block;
+    float: left;
+}
+.bookDetailBox .leftBox .bookMessage .text p{
+    line-height:22px;
+}
+.bookDetailBox .leftBox .bookMessage .text .title{
+    font-size:16px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    width:200px;
+
+}
+/*图片*/
+.bookDetailBox .leftBox .bookMessage .bookimg{
+    width:110px;
+    height:150px;
+    display: inline-block;
+    float: left;
+    margin: 20px;
+    box-shadow:1px 2px 5px 2px #afafaf;
+}
+/*评分*/
+.bookDetailBox .leftBox .bookMessage .grade{
+    width: 35%;
+    height: 80%;
+    display: inline-block;
+    float:right;
+
+}
+.bookDetailBox .leftBox .bookMessage .grade .innerBox{
+    width:100%;
+    height: 80%;
+    margin-top:10%;
+    padding-left:10px;
+    border-left:1px solid #cccccc;
+}
+.bookDetailBox .leftBox .bookMessage .grade .innerBox .ratio{
+    width:50px;
+    height: 45px;
+    font-weight: bolder;
+    font-size:25px;
+    line-height: 45px;
+    text-align: center;
+    display:inline-block;
+    float:left;
+    margin-left:5px;
+}
+.bookDetailBox .start{
+    width:75px;
+    height:15px;
+    float:left;
+    margin:10px;
+    /*background:url("../images/star.png")no-repeat;*/
+}
+.bookDetailBox .numlist{
+    width:100%;
+    float:left;
+    padding-left:10px;
+}
+.bookDetailBox .numlist li{
+    line-height:15px;
+    padding-bottom: 5px;
+}
+.bookDetailBox .numlist span{
+    width:100px;
+    height:10px;
+    display:inline-block;
+    background: #80999f;
+    margin-left:8px;
+}
+/************************************************************/
+/*ui交互*/
+.bookDetailBox .leftBox .bookMessage .sign{
+    width:100%;
+    height: 20%;
+    float: left;
+    position:relative;
+}
+.bookDetailBox .leftBox .bookMessage .sign ul{
+    width:100%;
+    margin-left:15px;
+}
+
+.bookDetailBox .leftBox .bookMessage .sign ul li{
+    line-height: 20px;
+    background: #fb675f;
+    border:1px solid #fb1b2b;
+    padding:0 8px;
+    float:left;
+    margin:10px;
+    border-radius: 5px;
+}
+.bookDetailBox .leftBox .bookMessage .sign ul li a{
+    color: #f5f5f5;
+}
+ 
+.bookDetailBox .leftBox .bookMessage .sign ul li:hover a{
+    background:white;
+    color:#fb675f;
+}
+.bookDetailBox .leftBox .bookMessage .sign ul li:hover{
+    background:white;
+}
+.bookDetailBox .leftBox .bookMessage .sign .down{
+    width:60px;
+
+}
+.bookDetailBox .leftBox .bookMessage .sign .down:hover {
+    border-radius: 5px 5px 0 0px;
+    border-bottom:none;
+}
+.bookDetailBox .leftBox .bookMessage .sign .share {
+    width:61px;
+    position:absolute;
+    left:181px;
+    top:29px;
+    border:1px solid #fb1b2b;
+    border-top:none;
+}
+.bookDetailBox .leftBox .bookMessage .sign .share li{
+    display:block;
+    height:30px;
+    width:100%;
+    border-radius: 0;
+    margin:0;
+    line-height:30px;
+    border:none;
+    padding:0;
+}
+.bookDetailBox .leftBox .bookMessage .sign .share li img{
+    width:20px;
+    height:20px;
+    margin:3px;
+    float: left;
+}
+.bookDetailBox .leftBox .bookMessage .sign .share li a{
+    color: #fffbfb;
+    font-size: 12px;
+}
+    /*简介*/
+.bookDetailBox .leftBox .content{
+    width:100%;
+    line-height:20px;
+    padding:20px 20px 0 20px;
+    font-size:12px;
+    overflow: auto;
+}
+.bookDetailBox .leftBox .content .innerBox{
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+.bookDetailBox .leftBox .content .title{
+    width:100%;
+    height:30px;
+    line-height: 30px;
+    padding:0 0px;
+    font-size:14px;
+    margin-top: 5px;
+}
+.bookDetailBox .leftBox .content .box{
+    height:160px;
+    overflow:auto;
+    margin-top:5px;
+}
+/*标签*/
+.bookDetailBox .leftBox .tags{
+    width:100%;
+    height:130px;
+    padding:20px 20px 0 20px;
+}
+.bookDetailBox .leftBox .tags .tagInner{
+    border-bottom: 1px solid #ccc;
+    height:100%;
+}
+.bookDetailBox .leftBox .tags .title{
+    width:100%;
+    height:30px;
+    font-size:14px;
+    margin-bottom:5px;
+}
+.bookDetailBox .leftBox .tags span{
+    height:20px;
+    line-height:20px;
+
+    background: #e4e4e5;
+    color: #9e9ce3;
+    border-radius: 3px;
+    margin:5px;
+    display:inline-block;
+    padding:0 5px;
+}
+/*推荐书本*/
+.bookDetailBox .leftBox .choose{
+    width:100%;
+    height:210px;
+    padding:10px 20px;
+}
+.bookDetailBox .leftBox .choose .title{
+    width:100%;
+    height:30px;
+    font-size:14px;
+}
+.bookDetailBox .leftBox .choose .rbook{
+    width:110px;
+    height:130px;
+    display:inline-block;
+    margin-left:4%;
+    float:left;
+    text-align: center;
+}
+.bookDetailBox .leftBox .choose .rbook img{
+    width:100px;
+    height:130px;
+}
+.bookDetailBox .leftBox .choose .rbook p:last-child{
+    margin-top:5px;
+    width:100px;
+    height:30px;
+    overflow:hidden;
+    line-height: 15px;
+}
+/*短评*/
+.bookDetailBox .leftBox .say{
+    width: 100%;
+    height:234px;
+    padding:0 20px;
+}
+.bookDetailBox .leftBox .say .title{
+    width:100%;
+    height:30px;
+    line-height: 30px;
+    font-size:14px;
+    border-bottom: 1px solid #ccc;
+}
+.bookDetailBox .leftBox .say .title span{
+    float:right;
+    font-size:12px;
+    border-radius: 3px;
+    height:20px;
+    width:80px;
+    display:inline-block;
+    border: 1px solid #ff86ab;
+    color: #f986aa;
+    line-height: 20px;
+    margin-top:5px;
+    text-align: center;
+}
+.bookDetailBox .leftBox .say .uesrCon{
+    width:100%;
+    height:100px;
+    padding:0;
+    border-bottom: 1px solid #cccccc;
+
+}
+.bookDetailBox .leftBox .say .uesrCon .user{
+    width:100%;
+    height:30px;
+    line-height: 30px;
+    display:inline-block;
+}
+.bookDetailBox .leftBox .say .uesrCon .user .data{
+    margin-left:10px;
+}
+.bookDetailBox .leftBox .say .uesrCon .user span:last-child{
+    float:right;
+}
+.bookDetailBox .leftBox .say .more{
+    margin:10px 0;
+    flota:right;
+}
+.bookDetailBox .leftBox .say .more a{
+    float:right;
+}
+.rightBox{
+    width: 35%;
+    height: 100%;
+    float: right;
+    background: #efede5;
+    border-left:2px solid #ccc;
+}
+.rightBox .comment{
+    padding:10px;
+}
+.rightBox .comBox{
+    border-bottom: 1px solid #ccc;
+}
+.rightBox .comment .title{
+    width:100%;
+    font-size:14px;
+    height:30px;
+    line-height:30px;
+}
+.rightBox .comment .user{
+    width:100%;
+    height:30px;
+    line-height: 30px;
+    margin:5px 0;
+}
+.rightBox .comment .user img{
+    width:20px;
+    height:20px;
+    margin-left:5px;
+    background:url("../images/user.jpg")no-repeat;
+    background-size:20px;
+}
+.rightBox .comment .user span{
+    margin-left:5px;
+}
+.rightBox .comment .tag{
+    width:80%;
+    heiht:30px;
+    padding-left:10px;
+    line-height:30px;
+    border-radius:0 10px;
+    background:cadetblue;
+    box-shadow: 1px 1px 3px #58597a;
+    margin:5px;
+    color:white;
+}
+.rightBox .comment .content{
+    width:100%;
+    height:100px;
+
+    line-height:25px;
+    overflow: hidden;
+    position:relative;
+}
+.rightBox .comment .content span{
+    width:64px;
+    line-height:25px;
+    background: #efede5;
+    position:absolute;
+    right:1px;
+    bottom:1px;
+    position:absolute;
+    button:0;
+    right:0;
+}
+.rightBox .comment .agree{
+    line-height:30px;
+}
+.rightBox .comment .more{
+    line-height:30px;
+    float:right;
+    margin-top:5px;
+}
+.rightBox .comment .more .moreBox{
+    float:right;
+}
+
+.writeBox{
+    width:520px;
+    height:350px;
+    background:white;
+    border:4px solid #3e312b;
+    position:absolute;
+    top:230px;
+    left:50%;
+    border-radius:10px;
+    background: #80999f;
+    overflow: hidden;
+    margin-left:-255px;
+}
+.writeBox .title{
+    width:100%;
+    height:50px;
+    background: #3f585f;
+    font-size:16px;
+    color: #fffcee;
+    line-height:50px;
+    padding-left:20px;
+}
+.writeBox .text{
+    width:90%;
+    height:65%;
+    display:block;
+    background: antiquewhite;
+    position:absolute;
+    left:50%;
+    top:70px;
+    margin-left:-45%;
+    font-size:14px;
+    padding:10px 20px;
+}
+.writeBox span{
+    color: #efede5;
+    line-height:30px;
+    position:absolute;
+    left:30px;
+    bottom:10px;
+    font-size:15px;
+}
+.writeBox button{
+    width:60px;
+    line-height:30px;
+    border-radius: 5px;
+    background: #b70000;
+    position:absolute;
+    right:26px;
+    bottom:10px;
+    color:whitesmoke;
+    font-weight: bolder;
+}
+

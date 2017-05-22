@@ -1,0 +1,24 @@
+<div class="bookBbox" ui-view="book.detail" ng-controller="bookCtrl">
+    <dl class="bookBox" ng-repeat="(key,book) in bookData.books|orderBy:order" ui-sref="book.detail({id:key})" ng-show="bookType == 'booklist'" ng-click="nowClick('detail',key)" >
+    <a href="">
+        <dt class="imgBox">
+            <img ng-src="{{book.images.medium}}" alt="tilte">
+        </dt>
+        <dd class="messageBox">
+            <span class="title">
+                <span>{{book.title}}</span>
+            </span>
+            <span class="score"> {{book.rating.average}}</span>
+            <span class="author">作者 : {{book.author[0]}}</span>
+            <span class="press">出版社 : {{book.publisher}}</span>
+            <div class="sort" >
+                <span ng-show="key<=1" ng-repeat="(key,tag) in book.tags">{{tag.title}}</span>
+            </div>
+      </dd>
+    </a>
+    </dl>
+    <!--ng-click="nowClick('booklist')" 设置首页显示-->
+    <div ui-view="bookDetail" ng-show="bookType == 'detail'" ></div>
+</div>
+
+

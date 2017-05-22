@@ -1,0 +1,11 @@
+<!--在插入html时, 插入html片段的最外层父元素类名不能跟之前插入的html片段一样,不然无法进行数据遍历-->
+<div class="list_done">
+    <ul>
+        <li class="item" ng-repeat="(key,value) in finish">
+            <input type="checkbox" ng-checked="true" ng-click="check(key)">
+            <span class="item_content" ng-bind="value.content"></span>
+            <span class="delT" ng-click="delete(key)">删除</span>
+            <span class="detailT" ng-click="detail(key)">详情</span>
+        </li>
+    </ul>
+</div>
